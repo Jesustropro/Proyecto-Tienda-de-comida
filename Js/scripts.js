@@ -4,12 +4,27 @@ let panDeJamon = 10
 let carrito = 0
 let comida = ""
 
-function Cliente (nombre, dirección, pedido, precio){
+class Comidas{
+    constructor(nombre, precio){
+    this.Nombre = nombre;
+    this.Precio = precio
+    }
+}
+let arrayMenu = []
+arrayMenu.push(new Comidas("Hamburguesa", "5$"))
+arrayMenu.push(new Comidas("Pizza", "2$"))
+arrayMenu.push(new Comidas("Pan de jamon", "10$"))
+console.log(arrayMenu)
+
+class Cliente{
+    constructor(nombre, dirección, pedido, precio){
     this.Dirección = dirección 
     this.Nombre = nombre
     this.Pedido = pedido
     this.Precio = precio
+    }
 }
+let arrayClientes = []
 
 let nombreIngresado = prompt ("Ingrese su nombre")
 console.log("El nombre del cliente es " + nombreIngresado)
@@ -77,8 +92,8 @@ console.log ("el precio final del pedido es " + precioFinal)
 carrito = precioFinal
 precioFinal = precioFinal + "$"
 
-const cliente1 = new Cliente (nombreIngresado, direccionIngresada, comida, precioFinal)
-console.log(cliente1)
+arrayClientes.push(new Cliente(nombreIngresado, direccionIngresada, comida, precioFinal))
+console.log(arrayClientes)
 
 alert("Su pedido final es de " + comida + " con un valor total de " + precioFinal + 
 " pronto llegará su pedido a la dirección indicada, disfrute su comida!")
