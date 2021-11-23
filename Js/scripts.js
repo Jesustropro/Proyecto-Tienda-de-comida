@@ -1,3 +1,6 @@
+let titulo = document.getElementById("titulo")
+console.log(titulo.innerHTML)
+
 let hamburguesa = 5
 let pizza = 2
 let panDeJamon = 10
@@ -100,10 +103,11 @@ console.log(arrayClientes)         /*Datos personales del cliente */
 arrayPedidos.push(new Pedido(comida, arrayClientes, precioFinal))
 console.log(arrayPedidos)     /*Datos del pedido del cliente */
 
+let contendor = document.createElement("div")
+    contendor.innerHTML = `<h3>Su pedido es:</h3>
+                           <h4>${comida}</h4>
+                           <p> Con un costo total de: ${precioFinal}</p>`
+    document.body.appendChild(contendor)
+    
 alert("Su pedido final es de " + comida + " con un valor total de " + precioFinal + 
 " pronto llegará su pedido a la dirección indicada, disfrute su comida!")
-
- 
-
-
-
