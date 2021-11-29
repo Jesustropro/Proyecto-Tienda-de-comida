@@ -7,6 +7,7 @@ let panDeJamon = 10
 let carrito = 0
 let comida = ""
 
+
 class Comida{                                
     constructor(nombre, precio){
     this.Nombre = nombre;
@@ -27,67 +28,62 @@ class Cliente{
 }
 let arrayClientes = []
 
-class Pedido{         
-    constructor(comidas, cliente, costo){
-    this.Comidas = comidas 
-    this.Cliente = cliente                /*                              Pedido                                                   */
-    this.Costo = costo
-    }
-}
-let arrayPedidos = []
-
 
 let nombreIngresado = prompt ("Ingrese su nombre")          /*Nombre del cliente */
 
 let direccionIngresada = prompt ("Ingrese su dirección")  /*Dirección del cliente */
 
 
-let pedido = prompt ("Elija su comida (Hamburguesa, Pizza o Pan de jamon)")
-if (pedido == "Hamburguesa"){
+
+let contenedor = document.createElement("div")
+    contenedor.innerHTML = `<h3>Su pedido es:</h3>
+                           <h4>${comida}</h4>`
+    document.body.appendChild(contenedor)
+
+
+let botonHamburguesa = document.getElementById("boton_comprar_hamburguesa")
+
+botonHamburguesa.addEventListener("click", () => {
     carrito = hamburguesa + carrito
     comida= comida + "1 hamburguesa + "
-}
-else if (pedido == "Pizza"){
+    let contenedor = document.createElement("div")
+    contenedor.innerHTML = `<h3>Su pedido es:</h3>
+                           <h4>${comida}</h4>`
+    document.body.appendChild(contenedor)
+})
+
+let botonPizza = document.getElementById("boton_comprar_pizza")
+
+botonPizza.addEventListener("click",() => {
     carrito = pizza + carrito
     comida= comida + "1 pizza + "
-}                                                           /*Pedido del cliente */
-else if (pedido == "Pan de jamon"){
+    let contenedor = document.createElement("div")
+    contenedor.innerHTML = `<h3>Su pedido es:</h3>
+                           <h4>${comida}</h4>`
+    document.body.appendChild(contenedor)
+})
+
+let botonPan = document.getElementById("boton_comprar_pan")
+
+botonPan.addEventListener("click", () => {
     carrito = panDeJamon + carrito
     comida= comida + "1 pan de jamon + "
-}
-else{
-    alert("Usted no ha elegido ninguna de las opciones disponibles")
-    console.log(nombreIngresado + " no ha elegido una opcion disponible")
-}
+    let contenedor = document.createElement("div")
+    contenedor.innerHTML = `<h3>Su pedido es:</h3>
+                           <h4>${comida}</h4>`
+    document.body.appendChild(contenedor)
+})
 
-let pedidoExtra = prompt("¿Desea elegir algo mas? ¿Si o No?")
-while (pedidoExtra == "Si"){
-    let pedido = prompt ("Elija su comida (Hamburguesa, Pizza o Pan de jamon")
-    if (pedido == "Hamburguesa"){
-        carrito = hamburguesa + carrito
-        comida= comida + "1 Hamburguesa + "
-    }
-    else if (pedido == "Pizza"){     /*Pedidos extras del cliente */
-        carrito = pizza + carrito
-        comida= comida + "1 pizza + "
-        }
-    else if (pedido == "Pan de jamon"){
-        carrito = panDeJamon + carrito
-        comida= comida + "1 pan de jamon + "
-    }
-    else{
-        alert("Usted no ha elegido ninguna de las opciones disponibles")
-        console.log(nombreIngresado + " no ha elegido una opcion disponible")
-    } 
-    pedidoExtra = prompt("¿Desea elegir algo mas? ¿Si o No?")
-}
+let botonFinalizarCompra = document.getElementById("compra_final")
 
+botonFinalizarCompra.addEventListener("click",() => {
 let precio = carrito         /*Suma del precio de todas las comidas pedidas */
+let iva = 0
 
 function calcularIva(precio){
     return (precio * 0.16)
 }                              /*Cálculo del iva del pedido */
-let iva = calcularIva(precio)
+iva = calcularIva(precio)
 
 function resultado(precio){
     return (precio + (precio * 0.16))
@@ -97,17 +93,13 @@ let precioFinal = resultado(precio)
 carrito = precioFinal          
 precioFinal = precioFinal + "$" /* Precio final del pedido que se le muestra al cliente */
 
+let contenedorPedidoFinal = document.createElement("div")
+contenedorPedidoFinal.innerHTML = `<h3>Su pedido es:</h3>
+                       <h4>${comida}</h4>
+                       <h3>El costo final de su pedido es:
+                       <h4>${precioFinal}`
+document.body.appendChild(contenedorPedidoFinal)
+})
+
 arrayClientes.push(new Cliente(nombreIngresado, direccionIngresada))
 console.log(arrayClientes)         /*Datos personales del cliente */
-
-arrayPedidos.push(new Pedido(comida, arrayClientes, precioFinal))
-console.log(arrayPedidos)     /*Datos del pedido del cliente */
-
-let contendor = document.createElement("div")
-    contendor.innerHTML = `<h3>Su pedido es:</h3>
-                           <h4>${comida}</h4>
-                           <p> Con un costo total de: ${precioFinal}</p>`
-    document.body.appendChild(contendor)
-    
-alert("Su pedido final es de " + comida + " con un valor total de " + precioFinal + 
-" pronto llegará su pedido a la dirección indicada, disfrute su comida!")
