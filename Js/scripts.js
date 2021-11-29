@@ -104,7 +104,13 @@ let contenedorPedidoFinal = document.createElement("div")
 contenedorPedidoFinal.innerHTML = `<h3>Su pedido es:</h3>
                        <h4>${comida}</h4>
                        <h3>El costo final de su pedido es:
-                       <h4>${precioFinal}`
+                       <h4>${precioFinal}
+                       
+                       <div class="alert alert-primary d-flex align-items-center position-relative position-absolute top-0 end-0 boton" role="alert">
+                       <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                       <div id="div">
+                         <p id="parrafo">Su pedido se ha realizado con éxito, disfrute su comida!</p>
+                       </div>`                       
 document.body.appendChild(contenedorPedidoFinal)
 console.log("El cliente ha hecho un pedido de " + comida + "con un costo total de " + precioFinal)
 })
