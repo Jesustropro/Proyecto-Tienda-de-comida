@@ -26,13 +26,19 @@ class Cliente{
     this.Nombre = nombre      /*                                 Cliente                                                                            */
     }
 }
-let arrayClientes = []
+let arrayCliente = []
 
+let botonEnviar = document.getElementById("enviarDatos")
+let formCliente = document.getElementById("formCliente")
 
-//let nombreIngresado = prompt ("Ingrese su nombre")          /*Nombre del cliente */
-
-//let direccionIngresada = prompt ("Ingrese su dirección")  /*Dirección del cliente */
-
+formCliente = addEventListener("submit", (e) => {
+    e.preventDefault()
+    let nombreCliente = document.getElementById("nombre").value
+    let direccionCliente = document.getElementById("direccion").value
+    arrayCliente.push(new Cliente(nombreCliente, direccionCliente))
+    console.log(arrayCliente)
+})
+ 
 let botonHamburguesa = document.getElementById("boton_comprar_hamburguesa")
 
 botonHamburguesa.addEventListener("click", () => {
@@ -97,10 +103,9 @@ precioFinal = precioFinal + "$" /* Precio final del pedido que se le muestra al 
 let contenedorPedidoFinal = document.createElement("div")
 contenedorPedidoFinal.innerHTML = `<h3>Su pedido es:</h3>
                        <h4>${comida}</h4>
-                       <h3>El costo final de su pedido es:s
+                       <h3>El costo final de su pedido es:
                        <h4>${precioFinal}`
 document.body.appendChild(contenedorPedidoFinal)
+console.log("El cliente ha hecho un pedido de " + comida + "con un costo total de " + precioFinal)
 })
 
-//arrayClientes.push(new Cliente(nombreIngresado, direccionIngresada))
-//console.log(arrayClientes)         /*Datos personales del cliente */
