@@ -10,19 +10,25 @@ body{
     background-color: ghostwhite;
 }
 .titulo{
-    font-size: 3rem;
+    font-size: 44px;
     text-align: center;
     padding-bottom: 4%;
-    padding-top: 3%;
-    color: darkorange;
+    padding-top: 0.5%;
+    color: red;
 }
 .botonPedido{
-    margin-left: 47%;
-    margin-top: 2%;
+    margin-left: 45%;
+    margin-top: 1%;
     margin-bottom: 2%;
 }
 .boton{
     margin-right: 1%;
-    margin-top: 1%;
-    padding-right: 2%!important;
+    margin-top: 3.5%;
+}
+.formulario{
+    margin-top: -4.5%;
+    margin-bottom: 0.5%;
+}
+#parrafo{
+    font-size: 18px;
 }

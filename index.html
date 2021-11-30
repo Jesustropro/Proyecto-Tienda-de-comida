@@ -11,9 +11,39 @@
 </head>
 <body>
 
-<h1 class="titulo" id="titulo">Desafio 10 - Jesus Mora - Eventos</h1>    
 
-<form class="container" id="formCliente">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+<h1 class="titulo" id="titulo">2da pre entrega del proyecto - Jesus Mora</h1>    
+
+
+<form class="container formulario" id="formCliente">
   <div class="mb-3">
     <label for="nombre" class="form-label">Nombre</label>
     <input type="text" class="form-control" id="nombre" name="nombre">
@@ -22,7 +52,7 @@
     <label for="direccion" class="form-label">Dirección en envío</label>
     <input type="text" class="form-control" id="direccion" name="direccion">
   </div>
-  <button id="enviarDatos" class="btn btn-warning">Enviar Datos</button>
+  <button id="enviarDatos" class="btn btn-danger">Enviar Datos</button>
 </form>
 
 
@@ -33,7 +63,7 @@
       <img src="./Multimedia/Hamburguesa.jpg" class="card-img-top" alt="Hamburguesa">
       <div class="card-body">
         <h5 class="card-title">Hamburguesa</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repellendus sint doloribus nisi veniam numquam. Autem nam dolores alias ab?</p>
         <button class="btn btn-danger" id="boton_comprar_hamburguesa">Añadir</button>
       </div>
       <div class="card-footer">
@@ -44,7 +74,7 @@
       <img src="./Multimedia/Pizza.jpg" class="card-img-top" alt="Pizza">
       <div class="card-body">
         <h5 class="card-title">Pizza</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed rerum sequi consequuntur a praesentium incidunt vitae, molestiae accusamus fugiat blanditiis!</p>
         <button class="btn btn-danger" id="boton_comprar_pizza">Añadir</button>
       </div>
       <div class="card-footer">
@@ -55,7 +85,7 @@
       <img src="./Multimedia/PanDeJamon.jpg" class="card-img-top" alt="PanDeJamon">
       <div class="card-body">
         <h5 class="card-title">Pan de jamon</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium minus iste ad deserunt, alias corrupti quisquam tenetur incidunt assumenda quas.</p>
         <button class="btn btn-danger" id="boton_comprar_pan" >Añadir</button>
       </div>
       <div class="card-footer">
@@ -64,9 +94,11 @@
     </div>
   </div>
 </div>
-<div>
-  <button type="button" class="btn btn-danger botonPedido" id="compra_final">Finalizar pedido</button>
-</div>
+
+<button type="button" class="btn btn-danger botonPedido" id="compra_final" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar pedido</button>
+
+<!-- Modal -->
+
 
 <script src="./Js/scripts.js"></script>    
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
