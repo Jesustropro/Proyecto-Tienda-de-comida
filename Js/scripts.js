@@ -7,18 +7,20 @@ let panDeJamon = 10
 let carrito = 0
 let comida = ""
 
-class Comida{                                
+/*class Comida{                                
     constructor(nombre, precio){
     this.Nombre = nombre;
     this.Precio = precio
     }
-}                                   /*                                          Menu de comida                                                               */
-let arrayMenu = []
-arrayMenu.push(new Comida("Hamburguesa", "5$"))
-arrayMenu.push(new Comida("Pizza", "2$")) 
-arrayMenu.push(new Comida("Pan de jamon", "10$"))
-console.log(arrayMenu)
-
+}*/                                   /*                                          Menu de comida                                                               */
+const comidas = [{id: 1, comida:"Hamburguesa", precio: "5$"},
+                 {id: 2, comida:"Pizza", precio: "2$"},
+                 {id: 3, comida:"Pan de jamón", precio: "3$"}]
+const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)}
+for (const comida of comidas){
+  guardarLocal(comida.id, JSON.stringify(comida))
+}
+guardarLocal("Menú de comida", JSON.stringify(comidas))
 class Cliente{
     constructor(nombre, dirección){
     this.Dirección = dirección 
@@ -34,10 +36,14 @@ formCliente = addEventListener("submit", (e) => {    //formulario para obtener i
     e.preventDefault()
     let nombreCliente = document.getElementById("nombre").value
     let direccionCliente = document.getElementById("direccion").value
+    sessionStorage.setItem("Nombre del cliente:", nombreCliente)
+    sessionStorage.setItem("Dirección del cliente:", direccionCliente)
     arrayCliente.push(new Cliente(nombreCliente, direccionCliente))
     console.log(arrayCliente)
 })
- 
+//let nombre_Cliente = sessionStorage.getItem("Nombre del cliente:")
+//let direccion_Cliente = sessionStorage.getItem("Dirección del cliente:")
+
 let botonHamburguesa = document.getElementById("boton_comprar_hamburguesa")
 
 botonHamburguesa.addEventListener("click", () => { //alerta de pedido exitoso
@@ -104,12 +110,12 @@ contenedor.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" 
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <h5 class="modal-title" id="exampleModalLabel">Pedido realizado con éxito!</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
       <p>Usted ha realizado un pedido de: ${comida}</p>
-      <p>El valor total a pagar por su pedido es: ${precioFinal}</p>     
+      <p>El valor total a pagar por su pedido es: ${precioFinal}</p>
       <p>Disfrute de su comida!</p>
     </div>
     <div class="modal-footer">
