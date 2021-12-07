@@ -44,8 +44,8 @@ formCliente = addEventListener("submit", (e) => {    //formulario para obtener i
 //let nombre_Cliente = sessionStorage.getItem("Nombre del cliente:")
 //let direccion_Cliente = sessionStorage.getItem("Dirección del cliente:")
 
+/*seccion de comida*/
 let botonHamburguesa = document.getElementById("boton_comprar_hamburguesa")
-
 botonHamburguesa.addEventListener("click", () => { //alerta de pedido exitoso
     carrito = hamburguesa + carrito
     comida= comida + "1 hamburguesa + "
@@ -59,7 +59,6 @@ botonHamburguesa.addEventListener("click", () => { //alerta de pedido exitoso
 })
 
 let botonPizza = document.getElementById("boton_comprar_pizza")
-
 botonPizza.addEventListener("click",() => {  //alerta de pedido exitoso
     carrito = pizza + carrito
     comida= comida + "1 pizza + "
@@ -73,7 +72,6 @@ botonPizza.addEventListener("click",() => {  //alerta de pedido exitoso
 })
 
 let botonPan = document.getElementById("boton_comprar_pan")
-
 botonPan.addEventListener("click", () => {  //alerta de pedido exitoso
     carrito = panDeJamon + carrito
     comida= comida + "1 pan de jamon + "
@@ -85,14 +83,13 @@ botonPan.addEventListener("click", () => {  //alerta de pedido exitoso
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`
     document.body.appendChild(contenedor)
 })
+/*sección de comida*/
 
-let botonFinalizarCompra = document.getElementById("compra_final")
+$("#compra_final").on("click", () => {
+  let precio = carrito         /*Suma del precio de todas las comidas pedidas */
+  let iva = 0
 
-botonFinalizarCompra.addEventListener("click",() => {
-let precio = carrito         /*Suma del precio de todas las comidas pedidas */
-let iva = 0
-
-function calcularIva(precio){
+  function calcularIva(precio){
     return (precio * 0.16)
 }                              /*Cálculo del iva del pedido */
 iva = calcularIva(precio)
@@ -105,8 +102,7 @@ let precioFinal = resultado(precio)
 carrito = precioFinal          
 precioFinal = precioFinal + "$" /* Precio final del pedido que se le muestra al cliente */
 
-let contenedor = document.createElement("div") //Ventana modal con información para el cliente
-contenedor.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+$("body").prepend(`<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
@@ -124,6 +120,7 @@ contenedor.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" 
     </div>
   </div>
 </div>
-</div>`
-document.body.appendChild(contenedor) 
+</div>`)
 })
+
+
