@@ -41,47 +41,39 @@ formCliente = addEventListener("submit", (e) => {    //formulario para obtener i
     arrayCliente.push(new Cliente(nombreCliente, direccionCliente))
     console.log(arrayCliente)
 })
+$("#enviarDatos").on("click", () => {
+  $("#formCliente").fadeOut(1000)
+})
+
 //let nombre_Cliente = sessionStorage.getItem("Nombre del cliente:")
 //let direccion_Cliente = sessionStorage.getItem("Dirección del cliente:")
 
 /*seccion de comida*/
+
+$("#animacion").hide()
+
 let botonHamburguesa = document.getElementById("boton_comprar_hamburguesa")
 botonHamburguesa.addEventListener("click", () => { //alerta de pedido exitoso
     carrito = hamburguesa + carrito
     comida= comida + "1 hamburguesa + "
-    let contenedor = document.createElement("div")
-    contenedor.innerHTML = `<div class="alert alert-success alert-dismissible fade show position-absolute top-0 end-0 boton" role="alert">
-    <div id="div">
-      <p id="parrafo">Añadido al carrito exitosamente</p>
-    </div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`
-    document.body.appendChild(contenedor)
+    $("#animacion").slideToggle(1500)
+                    .slideToggle(1500)
 })
 
 let botonPizza = document.getElementById("boton_comprar_pizza")
 botonPizza.addEventListener("click",() => {  //alerta de pedido exitoso
     carrito = pizza + carrito
     comida= comida + "1 pizza + "
-    let contenedor = document.createElement("div")
-    contenedor.innerHTML = `<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 end-0 boton" role="alert">
-    <div id="div">
-      <p id="parrafo">Añadido al carrito exitosamente</p>
-    </div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`
-    document.body.appendChild(contenedor)
+    $("#animacion").slideToggle(1500)
+                    .slideToggle(1500)
 })
 
 let botonPan = document.getElementById("boton_comprar_pan")
 botonPan.addEventListener("click", () => {  //alerta de pedido exitoso
     carrito = panDeJamon + carrito
     comida= comida + "1 pan de jamon + "
-    let contenedor = document.createElement("div")
-    contenedor.innerHTML = `<div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 boton" role="alert">
-    <div id="div">
-      <p id="parrafo">Añadido al carrito exitosamente</p>
-    </div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`
-    document.body.appendChild(contenedor)
+    $("#animacion").slideToggle(1500)
+                    .slideToggle(1500)
 })
 /*sección de comida*/
 
@@ -115,12 +107,16 @@ $("body").prepend(`<div class="modal fade" id="exampleModal" tabindex="-1" aria-
       <p>Disfrute de su comida!</p>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-warning" id="btn-cerrar" data-bs-dismiss="modal">Close</button>
       <button type="button" class="btn btn-danger">Realizar pago</button>
     </div>
   </div>
 </div>
 </div>`)
+
+$("#btn-cerrar").on("click", () => {
+  $("#compra_final").fadeOut(500)
+})
 })
 
 
