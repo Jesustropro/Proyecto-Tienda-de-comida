@@ -120,3 +120,22 @@ $("#btn-cerrar").on("click", () => {
 })
 
 
+
+//Desafio de AJAX
+const URLGET = "https://jsonplaceholder.typicode.com/posts"
+$("body").append('<button class="btn btn-danger botonPedido" id="btndesafio">Cargar usuarios con AJAX</button>')
+$("#btndesafio").click(() => { 
+    $.get(URLGET, function (respuesta, estado) {
+          if(estado === "success"){
+            let Datos = respuesta
+            for (const dato of Datos) {
+              $("body").append(`<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+              <div class="card-body">
+    <h5 class="card-title">${dato.title}</h5>
+    <p class="card-text">${dato.body}</p>
+  </div>
+</div>` )
+      }
+    }
+  })
+})
