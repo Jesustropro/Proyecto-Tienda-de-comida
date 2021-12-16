@@ -1,3 +1,23 @@
+/* let divComidas = document.getElementById("comidas")
+fetch("./JSON/comidas.json")
+.then(promesa => promesa.json())
+.then(dataComidas => {
+  dataComidas.forEach((comidaArray,indice) => {
+    divComidas.innerHTML += `
+    <div class="card text-white bg-danger mb-3" id="comida${indice}" style="max-width: 20rem; margin: 8px; padding-top: 10px;">
+  <img src="./Multimedia/${comidaArray.img}" class="card-img-top" alt="">
+  <div class="card-body">
+    <h4 class="card-title">${comidaArray.nombre}</h4>            //AVANCE DEL PROYECTO FINAL
+    <p class="card-text">Precio: $${comidaArray.precio}</p>
+    <p class="card-text">Disponible:${comidaArray.stock}</p>
+    <button id="boton${indice}" class="btn btn-dark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAVJJREFUSEu9lNFRwzAQRHcnBUAJEg0QOoAKSAeEX4iD6QAqwBMFfjEVAB1ABYQGIlMBoYDMMTGJR9iOZewE/d7p3u2tTsSWD7dcH/8HkEDLUs0MYEwzvdyEukyBA/ipK3LEcfLSFlIYkQQqBHgD4JnG9jYPCNUu5vxMC3dEM0qSNpBSk2WgYxAnjQsLJhzbg8X9ckCoupjzrTEA+KCxai0g9TjQEwD7ZRAamzZWeBirZPKao+mVB6D6AO8bARzvKhdNAj0DsJM1tuw8D80peaWxh9mdqjnLcC+CyMXfAHJKk8T1AKFSmNPmm6jw4AsdUYyShfL0eP8iCfQTgGMXshYgeODY9n/l+p6iDFQP5KMvL42XfC9eBb4n64DfaWy3MM5anbVIqqdgqG8hOANxx5E9d3lSEatlcn5jVwavIO4O5GP1AdtW0MIC/x60KV57RG0g31U/jxk7xX9qAAAAAElFTkSuQmCC"/></button>
+  </div>
+</div>`
+  });
+}) */
+
+
+
 let titulo = document.getElementById("titulo")
 console.log(titulo.innerHTML)
 
@@ -84,12 +104,12 @@ $("#compra_final").on("click", () => {
   function calcularIva(precio){
     return (precio * 0.16)
 }                              /*Cálculo del iva del pedido */
-iva = calcularIva(precio)
+  iva = calcularIva(precio)
 
 function resultado(precio){
     return (precio + (precio * 0.16))
 }                                     /*Precio final del pedido con iva incluido */
-let precioFinal = resultado(precio)
+  let precioFinal = resultado(precio)
 
 carrito = precioFinal          
 precioFinal = precioFinal + "$" /* Precio final del pedido que se le muestra al cliente */
@@ -104,7 +124,7 @@ $("body").prepend(`<div class="modal fade" id="exampleModal" tabindex="-1" aria-
     <div class="modal-body">
       <p>Usted ha realizado un pedido de: ${comida}</p>
       <p>El valor total a pagar por su pedido es: ${precioFinal}</p>
-      <p>Disfrute de su comida!</p>
+      <p>Disfrute de su comida!</p>                                   
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-warning" id="btn-cerrar" data-bs-dismiss="modal">Close</button>
@@ -117,25 +137,4 @@ $("body").prepend(`<div class="modal fade" id="exampleModal" tabindex="-1" aria-
 $("#btn-cerrar").on("click", () => {
   $("#compra_final").fadeOut(500)
 })
-})
-
-
-
-//Desafio de AJAX
-const URLGET = "https://jsonplaceholder.typicode.com/posts"
-$("body").append('<button class="btn btn-danger botonPedido" id="btndesafio">Cargar usuarios con AJAX</button>')
-$("#btndesafio").click(() => { 
-    $.get(URLGET, function (respuesta, estado) {
-          if(estado === "success"){
-            let Datos = respuesta
-            for (const dato of Datos) {
-              $("body").append(`<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-              <div class="card-body">
-    <h5 class="card-title">${dato.title}</h5>
-    <p class="card-text">${dato.body}</p>
-  </div>
-</div>` )
-      }
-    }
-  })
 })

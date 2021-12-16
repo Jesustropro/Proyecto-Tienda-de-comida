@@ -1,0 +1,50 @@
+[
+    {
+        "nombre": "Hamburguesa",
+        "precio": 5,
+        "stock": 100,
+        "img": "./Hamburguesa.jpg"
+    },
+    {
+        "nombre": "Pizza",
+        "precio": 4,
+        "stock": 100,
+        "img": "./Pizza.jpg"
+    },
+    {
+        "nombre": "Pan de jamón",
+        "precio": 10,
+        "stock": 100,
+        "img": "./PanDeJamon.jpg"
+    },
+    {
+        "nombre": "Pepito",
+        "precio": 8,
+        "stock": 100
+    },
+    {
+        "nombre": "Empanada",
+        "precio": 2,
+        "stock": 100
+    },
+    {
+        "nombre": "Perro caliente",
+        "precio": 3,
+        "stock": 100
+    },
+    {
+        "nombre": "Arepa",
+        "precio": 5,
+        "stock": 100
+    },
+    {
+        "nombre": "Pan dulce",
+        "precio": 1,
+        "stock": 100
+    },
+    {
+        "nombre": "Torta",
+        "precio": 5,
+        "stock": 100
+    }
+]
