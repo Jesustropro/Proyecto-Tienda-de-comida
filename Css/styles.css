@@ -12,23 +12,14 @@ body{
 .titulo{
     font-size: 44px;
     text-align: center;
-    padding-bottom: 4%;
+    padding-bottom: 1%;
     padding-top: 0.5%;
     color: red;
 }
-.botonPedido{
-    margin-left: 45%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-}
-.boton{
+.alertOpExitosa{
     margin-right: 1%;
-    margin-top: 3.5%;
+    margin-top: 3.8%;
 }
-.formulario{
-    margin-top: -4.5%;
-    margin-bottom: 0.5%;
-}
-#parrafo{
+.parrafoAlert{
     font-size: 18px;
 }

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desafio</title>
+<title>ElectricPepitos - Menú</title>
 <link rel="stylesheet" href="./Css/styles.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
@@ -22,85 +22,57 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="#">Menú</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Contacto</a>
+            <a class="nav-link active" href="#">¿Quiénes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Contáctanos</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item ml-auto">
-            <button id="botonCarrito" class="btn btn-dark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAidJREFUWEftlzFy00AUhv+fBNpATYHWDWmYYbgA0NBmOAExBTRWxgeAgRk4gMmqgYI4N4CWBnMBZhgaaLxLQZ8aiB8j2ZFlGUmb1Tq4iDpp37795v1v/10Ra/ZwzXhwDtSkyEKFZK/zHJOJ5JOIEbX91JQk5PgiUKzmMHOqIfW4G3LRulwOQABE7jOx784Calmyk1VFbgLYmb2OqM3dMwcqLij9KMIxTf5tQxQH1q4aqnbbS08NQTzIIASHTMzufwaK7oD8OIM4gsggONAmDouVbzRGiVUq07XgIPOEltqok1cHoGgX4MEKgX5Qm8gdqB9dxjHTKm2tBIp8xf1x3xko6+dic4emKu3eRskyoLIFhIP6Qm1SvyucVo7JJVYjALcdwx3DpEtth55AK2juDbnCgT3yAsqkC2kBFUbr1EP58ZZeT0SeOepRH1ZxYJ8OKFxzL3iPt2TBLKDkPS2BFs43P/Vqbg6nkizvpXbNveQ9rSo03W1tLGDZe1oD5VC8kB+KTtrJxJaNsDzPSzKnxT2DvIGkp16DSP9GxgD2qM2HfzFIrO4B2AfQgeCAiXlcx+oFJL2oC/JtIfF3arNdAfQNwPV8TOQhE1t5v/IDitUTAC8KAL+pzaUKoF8ALhbGnlKbl1VV8gPqdW6A8hnAZpZY8KZKipm0j2YAfyC8xWT8NSjQ1LEzqB2I/KyTYBqbSXwVwvd1MGmsV4U8N5DTtHOgpjKtXYX+AmNGySV+Aq/TAAAAAElFTkSuQmCC"/></button>
+            <button id="botonCarrito" data-bs-toggle="modal" data-bs-target="#modalCarrito" class="btn btn-dark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAidJREFUWEftlzFy00AUhv+fBNpATYHWDWmYYbgA0NBmOAExBTRWxgeAgRk4gMmqgYI4N4CWBnMBZhgaaLxLQZ8aiB8j2ZFlGUmb1Tq4iDpp37795v1v/10Ra/ZwzXhwDtSkyEKFZK/zHJOJ5JOIEbX91JQk5PgiUKzmMHOqIfW4G3LRulwOQABE7jOx784Calmyk1VFbgLYmb2OqM3dMwcqLij9KMIxTf5tQxQH1q4aqnbbS08NQTzIIASHTMzufwaK7oD8OIM4gsggONAmDouVbzRGiVUq07XgIPOEltqok1cHoGgX4MEKgX5Qm8gdqB9dxjHTKm2tBIp8xf1x3xko6+dic4emKu3eRskyoLIFhIP6Qm1SvyucVo7JJVYjALcdwx3DpEtth55AK2juDbnCgT3yAsqkC2kBFUbr1EP58ZZeT0SeOepRH1ZxYJ8OKFxzL3iPt2TBLKDkPS2BFs43P/Vqbg6nkizvpXbNveQ9rSo03W1tLGDZe1oD5VC8kB+KTtrJxJaNsDzPSzKnxT2DvIGkp16DSP9GxgD2qM2HfzFIrO4B2AfQgeCAiXlcx+oFJL2oC/JtIfF3arNdAfQNwPV8TOQhE1t5v/IDitUTAC8KAL+pzaUKoF8ALhbGnlKbl1VV8gPqdW6A8hnAZpZY8KZKipm0j2YAfyC8xWT8NSjQ1LEzqB2I/KyTYBqbSXwVwvd1MGmsV4U8N5DTtHOgpjKtXYX+AmNGySV+Aq/TAAAAAElFTkSuQmCC"/></button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 boton" id="animacion" role="alert">
+  <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 alertOpExitosa" id="animacion" role="alert">
     <div id="div">
-      <p id="parrafo">Añadido al carrito exitosamente</p>
+      <p class="parrafoAlert">Acción realizada de manera exitosa!</p>
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
-<h1 class="titulo" id="titulo">Eletric pepitos</h1>    
+<h1 class="titulo " id="titulo">Menú de comida</h1>    
+<div class= "container-fluid">
+<div class="row" id="comidas"></div>
+</div>
 
-<form class="container formulario" id="formCliente">
-  <div class="mb-3">
-    <label for="nombre" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" name="nombre">
-  </div>
-  <div class="mb-3">
-    <label for="direccion" class="form-label">Dirección en envío</label>
-    <input type="text" class="form-control" id="direccion" name="direccion">
-  </div>
-  <button id="enviarDatos" class="btn btn-danger">Enviar Datos</button>
-</form>
-
-<div class="container">
-  <div class="card-group">
-    <div class="card">
-      <img src="./Multimedia/Hamburguesa.jpg" class="card-img-top" alt="Hamburguesa">
-      <div class="card-body">
-        <h5 class="card-title">Hamburguesa</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repellendus sint doloribus nisi veniam numquam. Autem nam dolores alias ab?</p>
-          <button class="btn btn-danger boton_comprar boton" id="boton_comprar_hamburguesa">Añadir</button>
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Precio: 5$</small>
+      <div class="modal-body" id="carritoModal">
+      
       </div>
-    </div>
-    <div class="card">
-      <img src="./Multimedia/Pizza.jpg" class="card-img-top" alt="Pizza">
-      <div class="card-body">
-        <h5 class="card-title">Pizza</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed rerum sequi consequuntur a praesentium incidunt vitae, molestiae accusamus fugiat blanditiis!</p>
-        <button class="btn btn-danger boton_comprar" id="boton_comprar_pizza">Añadir</button>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Precio: 2$</small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="./Multimedia/PanDeJamon.jpg" class="card-img-top" alt="PanDeJamon">
-      <div class="card-body">
-        <h5 class="card-title">Pan de jamon</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium minus iste ad deserunt, alias corrupti quisquam tenetur incidunt assumenda quas.</p>
-        <button class="btn btn-danger boton_comprar" id="boton_comprar_pan" >Añadir</button>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Precio: 10$</small>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" id="btnPago">Realizar pago</button>
       </div>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-danger botonPedido" id="compra_final" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar pedido</button>
 
-<!--
-<div class="row" id="comidas"></div>
-!-->
+
+
 
 
 
