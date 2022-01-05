@@ -33,6 +33,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item ml-auto">
+            <button data-bs-toggle="modal" data-bs-target="#modalUsuario" class="btn btn-dark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAtxJREFUWEftlz1vE0EQhmf2DAH7EuFcSY0U/4G4DRKUuEgbf7VEwiVBCiVIhNJI0PouSUkDZZCgdf6AI1FTXg75ixjsHbTnHDrbe77di4MsxJbJ7MxzM+/OjBGW7OCS8cC/A+TurK/dNniFI+YRICcyTQAtRtT8MWK2dXzeTpL9RBnqFtcfokGvgGBNGhShTSN8Zh6dn+hCaQN1KlaNEX+iEogje7Nqu3UV28BGC2hQsnJD5B+CywRwBhzrA4Km+NsKQh4Y1RBgI7BJESusHLotVSgtoG45+/FPMIRPGdt7LAvUq2TfAcEDX1cILdP2CgsH6petuwT8y6XjzsUIt6KEKwR/yyBhuyrsEdhW2nG/qUApZ8gXMqO3vtM52QmCTmSJ466qwJWBwmJWEauuvbaoly5DExpCaF8M8f5cDaXoc9CnrkVDIqVTr+wkY3u7sa8M4Mx0vEcqgh7LU+PM9CGEFhCrD0Z06vchAzcBeQ1pPErEudY+JAIsVacOvvpS4AdBn5EkuUMc91Sfevi+VsnCF0Xzu5nCKhKfmPaErPlzSI2/Ou01ZKdtmihD/ZKV5wgbDEbS9YOD0WYArbTj+mLXOcpA3apVBeLb4RekEkgMVyD23nRcW8U+Fkg0RI78AAnyKg6jbAihyYjtxQ3ZuUD9krVNjO9Pb4YEcIpILVEaGYAoJRHmEGBz4v8Km2QkkD8qxDIWWlNVhuo04EzfQmgjsUJUpiKBuuXscfCFYjO8QeypzuYXBhMd/hfy18FyJ8pn2l5Rll0pkBAwcr6ftP3LAs2MHcZemg23MW0rBwqtqknKFCXscPmiVlspUK+c/Ro4zTjevau8rum7cb5ngETTI+RHwpF4Tabj7SwSKKxNJFZMH7r+L5bgzABN6AfJztjfXywSqFe58xwIK/4HS3Q0A5R0F1aFjvMvLdmIjbuywaE5nVLVwFF2QhLz/MeOjqsC6N7/DxSXsaXL0G8cCXw0EnT9kAAAAABJRU5ErkJggg=="/></button>
             <button id="botonCarrito" data-bs-toggle="modal" data-bs-target="#modalCarrito" class="btn btn-dark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAidJREFUWEftlzFy00AUhv+fBNpATYHWDWmYYbgA0NBmOAExBTRWxgeAgRk4gMmqgYI4N4CWBnMBZhgaaLxLQZ8aiB8j2ZFlGUmb1Tq4iDpp37795v1v/10Ra/ZwzXhwDtSkyEKFZK/zHJOJ5JOIEbX91JQk5PgiUKzmMHOqIfW4G3LRulwOQABE7jOx784Calmyk1VFbgLYmb2OqM3dMwcqLij9KMIxTf5tQxQH1q4aqnbbS08NQTzIIASHTMzufwaK7oD8OIM4gsggONAmDouVbzRGiVUq07XgIPOEltqok1cHoGgX4MEKgX5Qm8gdqB9dxjHTKm2tBIp8xf1x3xko6+dic4emKu3eRskyoLIFhIP6Qm1SvyucVo7JJVYjALcdwx3DpEtth55AK2juDbnCgT3yAsqkC2kBFUbr1EP58ZZeT0SeOepRH1ZxYJ8OKFxzL3iPt2TBLKDkPS2BFs43P/Vqbg6nkizvpXbNveQ9rSo03W1tLGDZe1oD5VC8kB+KTtrJxJaNsDzPSzKnxT2DvIGkp16DSP9GxgD2qM2HfzFIrO4B2AfQgeCAiXlcx+oFJL2oC/JtIfF3arNdAfQNwPV8TOQhE1t5v/IDitUTAC8KAL+pzaUKoF8ALhbGnlKbl1VV8gPqdW6A8hnAZpZY8KZKipm0j2YAfyC8xWT8NSjQ1LEzqB2I/KyTYBqbSXwVwvd1MGmsV4U8N5DTtHOgpjKtXYX+AmNGySV+Aq/TAAAAAElFTkSuQmCC"/></button>
           </li>
         </ul>
@@ -40,7 +41,7 @@
     </div>
   </nav>
 
-  <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 alertOpExitosa" id="animacion" role="alert">
+  <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 alertOpExitosa" id="alertOpExitosa" role="alert">
     <div id="div">
       <p class="parrafoAlert">Acción realizada de manera exitosa!</p>
     </div>
@@ -52,19 +53,47 @@
 <div class="row" id="comidas"></div>
 </div>
 
-<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Datos del usuario</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body" id="usuarioModal">
+        <form class="container formulario" id="formCliente">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección en envío</label>
+            <input type="text" class="form-control" id="direccion" name="direccion">
+          </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+          <button id="enviarDatos" class="btn btn-danger">Enviar Datos</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex flex-column">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+        <p>Costo total:<span id="costoTotal"> 0 </span></p>
+
+      </div>
       <div class="modal-body" id="carritoModal">
-      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-danger" id="btnPago">Realizar pago</button>
+        <button type="button" class="btn btn-danger" id="btnPago" data-bs-dismiss="modal">Realizar pago</button>
       </div>
     </div>
   </div>
@@ -75,7 +104,7 @@
 
 
 
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./Js/scripts.js"></script>    
