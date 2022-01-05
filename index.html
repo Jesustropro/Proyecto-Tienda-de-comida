@@ -86,13 +86,14 @@
       <div class="modal-header d-flex flex-column">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
-        <p>Costo total:<span id="costoTotal"> 0 </span></p>
+        <p>Costo total (IVA incluido):<span id="costoTotal"> 0 </span></p>
 
       </div>
       <div class="modal-body" id="carritoModal">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" id="btnCalcular">Calcular costo final</button>
         <button type="button" class="btn btn-danger" id="btnPago" data-bs-dismiss="modal">Realizar pago</button>
       </div>
     </div>

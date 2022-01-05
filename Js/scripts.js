@@ -23,6 +23,8 @@ let carritoModal = document.getElementById("carritoModal")
 let btnPago = document.getElementById("btnPago")
 let botonEnviar = document.getElementById("enviarDatos")
 let formCliente = document.getElementById("formCliente")
+$("#btnPago").hide()
+$("#alertOpExitosa").hide()
 let carrito = 0
 
 fetch("./JSON/comidas.json")
@@ -42,7 +44,6 @@ fetch("./JSON/comidas.json")
 `
 });
 
-$("#alertOpExitosa").hide()
 let btnAñadirCarrito = document.querySelectorAll("[añadirproducto]")
 btnAñadirCarrito.forEach(botonAñadir => {
   botonAñadir.addEventListener("click", () => {
@@ -88,16 +89,33 @@ botonCarrito.addEventListener("click", () => {
   </div>
   `
   })
-  botonCarrito.addEventListener("click", () => {
+  btnCalcular.addEventListener("click", () => {
     comidaStorage = JSON.parse(localStorage.getItem("carrito"))
     comidaStorage.forEach((comidaCarrito) => {
     
     let cantidad = comidaCarrito.cantidad 
-    let precio = comidaCarrito.precio
-    let total = cantidad * precio 
-    
+    let costo = comidaCarrito.precio
+    let total = cantidad * costo
     carrito = (carrito + total)
-    costoTotal.innerHTML = `${carrito}$`
+
+    let precio = carrito         /*Suma del precio de todas las comidas pedidas */
+    let iva = 0
+  
+    function calcularIva(precio){
+      return (precio * 0.16)
+  }                              /*Cálculo del iva del pedido */
+    iva = calcularIva(precio)
+  
+  function resultado(precio){
+      return (precio + (precio * 0.16))
+  }                                     /*Precio final del pedido con iva incluido */
+    let precioFinal = resultado(precio)
+  
+  carrito = precioFinal  
+  costoTotal.innerHTML = `${carrito}$`
+
+  $("#btnCalcular").fadeOut()
+  $("#btnPago").fadeIn()
     })
     })
 })
