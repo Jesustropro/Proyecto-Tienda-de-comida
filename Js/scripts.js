@@ -97,21 +97,7 @@ botonCarrito.addEventListener("click", () => {
     let costo = comidaCarrito.precio
     let total = cantidad * costo
     carrito = (carrito + total)
-
-    let precio = carrito         /*Suma del precio de todas las comidas pedidas */
-    let iva = 0
-  
-    function calcularIva(precio){
-      return (precio * 0.16)
-  }                              /*Cálculo del iva del pedido */
-    iva = calcularIva(precio)
-  
-  function resultado(precio){
-      return (precio + (precio * 0.16))
-  }                                     /*Precio final del pedido con iva incluido */
-    let precioFinal = resultado(precio)
-  
-  carrito = precioFinal  
+ 
   costoTotal.innerHTML = `${carrito}$`
 
   $("#btnCalcular").fadeOut()
