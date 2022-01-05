@@ -23,6 +23,7 @@ let carritoModal = document.getElementById("carritoModal")
 let btnPago = document.getElementById("btnPago")
 let botonEnviar = document.getElementById("enviarDatos")
 let formCliente = document.getElementById("formCliente")
+let carrito = 0
 
 fetch("./JSON/comidas.json")
 .then(promesa => promesa.json())
@@ -42,7 +43,6 @@ fetch("./JSON/comidas.json")
 });
 
 $("#alertOpExitosa").hide()
-
 let btnAñadirCarrito = document.querySelectorAll("[añadirproducto]")
 btnAñadirCarrito.forEach(botonAñadir => {
   botonAñadir.addEventListener("click", () => {
@@ -66,14 +66,13 @@ btnAñadirCarrito.forEach(botonAñadir => {
   })
 })
 
-
 botonCarrito.addEventListener("click", () => {
   carritoModal.innerHTML = `
   <p></p>`
   let comidaStorage = JSON.parse(localStorage.getItem("carrito"))
   comidaStorage.forEach((comidaCarrito, indice) => {
     carritoModal.innerHTML += `
-    <div class="card mb-0 border-danger" id="comidaCarrito${indice}" style="max-width: 540px;">
+    <div class="card mb-1 border-danger" id="comidaCarrito${indice}" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-6">
         <img src="./Multimedia/${comidaCarrito.img}" class="img-fluid rounded-start" alt="...">
@@ -90,13 +89,28 @@ botonCarrito.addEventListener("click", () => {
   `
   })
 })
+botonCarrito.addEventListener("click", () => {
+comidaStorage = JSON.parse(localStorage.getItem("carrito"))
+comidaStorage.forEach((comidaCarrito) => {
+
+let cantidad = comidaCarrito.cantidad 
+let precio = comidaCarrito.precio
+let total = cantidad * precio 
+
+carrito = (carrito + total)
+totalFinal = (total + carrito)
+console.log(carrito)
+costoTotal.innerHTML = `${totalFinal}$`
+})
+})
+
 
 btnPago.addEventListener("click", () => {            //animacion del alert de pedido exitoso
   Swal.fire(
     'Excelente!',
     'Se ha realizado el pago de manera exitosa!',
     'success'
-  )
+    )
 })
 
 formCliente = addEventListener("submit", (e) => {    //formulario para obtener informacion del cliente
@@ -108,22 +122,18 @@ formCliente = addEventListener("submit", (e) => {    //formulario para obtener i
   arrayCliente.push(new Cliente(nombreCliente, direccionCliente))
 })
 
-
-var nombreClienteStorage = JSON.stringify(sessionStorage.getItem("Nombre del cliente:"))
-var direccionClienteStorage = JSON.stringify(sessionStorage.getItem("Dirección del cliente:")) 
-
-
+let nombreClienteStorage = JSON.stringify(sessionStorage.getItem("Nombre del cliente:"))
+let direccionClienteStorage = JSON.stringify(sessionStorage.getItem("Dirección del cliente:")) 
 
 function verImagen(){
   n=0;
-  this[n++]="./Multimedia/0.jpg";  //funcion para mostrar imagenes al azar
-  this[n++]="./Multimedia/1.jpg";
-  this[n++]="./Multimedia/2.jpg"
+  this[n++]="./Multimedia/0.png";  //funcion para mostrar imagenes al azar
+  this[n++]="./Multimedia/1.png";
+  this[n++]="./Multimedia/2.png"
   this.N=n;
 }
-var imagen=new verImagen();
-src = imagen[ Math.floor(Math.random() * imagen.N) ] ;
-
+var imagen =new verImagen();
+src = imagen[ Math.floor(Math.random() * imagen.N) ] ; 
 
 $("#enviarDatos").on("click", () => {                 
   $("#formCliente").fadeOut(400)           //mostrar datos ingresados en una card
@@ -143,29 +153,7 @@ $("#enviarDatos").on("click", () => {
   </div>
 </div>
 `)
-$("#enviarDatos").fadeOut(20)
+$("#enviarDatos").fadeOut()
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  function calcularIva(precio){
-  return (precio * 0.16)
-}                              //Cálculo del iva del pedido 
-iva = calcularIva(precio)
-
-function resultado(precio){
-    return (precio + (precio * 0.16))
-}   */                                  

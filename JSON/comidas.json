@@ -21,54 +21,54 @@
         "nombre": "Pepito",
         "precio": 8,
         "stock": 40,
-        "img": "./Hamburguesa.jpg"
+        "img": "./Pepito.jpg"
     },
     {
         "nombre": "Empanada",
         "precio": 2,
         "stock": 136,
-        "img": "./Hamburguesa.jpg"
+        "img": "./Empanada.jpg"
     },
     {
         "nombre": "Perro caliente",
         "precio": 3,
         "stock": 80,
-        "img": "./Hamburguesa.jpg"
+        "img": "./PerroCaliente.png"
     },
     {
         "nombre": "Arepa",
         "precio": 5,
         "stock": 500,
-        "img": "./Hamburguesa.jpg"
+        "img": "./Arepa.jpg"
     },
     {
         "nombre": "Pan dulce",
         "precio": 1,
         "stock": 200,
-        "img": "./Hamburguesa.jpg"
+        "img": "./PanDulce.jpg"
     },
     {
         "nombre": "Dona",
         "precio": 2,
         "stock": 50,
-        "img": "./Hamburguesa.jpg"
+        "img": "./Dona.jpg"
     },
     {
         "nombre": "Torta Selva Negra",
         "precio": 5,
         "stock": 45,
-        "img": "./Hamburguesa.jpg"
+        "img": "./SelvaNegra.jpg"
     },
     {
         "nombre": "Torta Tres Leches",
         "precio": 5,
         "stock": 45,
-        "img": "./Hamburguesa.jpg"
+        "img": "./TresLeches.png"
     },
     {
         "nombre": "Torta de zanahoria",
         "precio": 5,
         "stock": 45,
-        "img": "./Hamburguesa.jpg"
+        "img": "./TortaZanahoria.jpg"
     }
 ]
