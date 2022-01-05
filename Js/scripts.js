@@ -46,8 +46,8 @@ $("#alertOpExitosa").hide()
 let btnAñadirCarrito = document.querySelectorAll("[añadirproducto]")
 btnAñadirCarrito.forEach(botonAñadir => {
   botonAñadir.addEventListener("click", () => {
-    $("#alertOpExitosa").slideToggle(1500)
-    .slideToggle(1500)
+    $("#alertOpExitosa").slideToggle(500)
+    .fadeOut(1500)
   })
 })
 
@@ -72,7 +72,7 @@ botonCarrito.addEventListener("click", () => {
   let comidaStorage = JSON.parse(localStorage.getItem("carrito"))
   comidaStorage.forEach((comidaCarrito, indice) => {
     carritoModal.innerHTML += `
-    <div class="card mb-1 border-danger" id="comidaCarrito${indice}" style="max-width: 540px;">
+    <div class="card mb-2 border-danger" id="comidaCarrito${indice}" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-6">
         <img src="./Multimedia/${comidaCarrito.img}" class="img-fluid rounded-start" alt="...">
@@ -88,21 +88,20 @@ botonCarrito.addEventListener("click", () => {
   </div>
   `
   })
+  botonCarrito.addEventListener("click", () => {
+    comidaStorage = JSON.parse(localStorage.getItem("carrito"))
+    comidaStorage.forEach((comidaCarrito) => {
+    
+    let cantidad = comidaCarrito.cantidad 
+    let precio = comidaCarrito.precio
+    let total = cantidad * precio 
+    
+    carrito = (carrito + total)
+    costoTotal.innerHTML = `${carrito}$`
+    })
+    })
 })
-botonCarrito.addEventListener("click", () => {
-comidaStorage = JSON.parse(localStorage.getItem("carrito"))
-comidaStorage.forEach((comidaCarrito) => {
 
-let cantidad = comidaCarrito.cantidad 
-let precio = comidaCarrito.precio
-let total = cantidad * precio 
-
-carrito = (carrito + total)
-totalFinal = (total + carrito)
-console.log(carrito)
-costoTotal.innerHTML = `${totalFinal}$`
-})
-})
 
 
 btnPago.addEventListener("click", () => {            //animacion del alert de pedido exitoso
@@ -111,6 +110,7 @@ btnPago.addEventListener("click", () => {            //animacion del alert de pe
     'Se ha realizado el pago de manera exitosa!',
     'success'
     )
+    $("#btnPago").fadeOut()
 })
 
 formCliente = addEventListener("submit", (e) => {    //formulario para obtener informacion del cliente
