@@ -9,7 +9,7 @@ class Comida {
 }
 let comidas = []
 
-class Cliente {
+class Cliente{
   constructor(nombre, direccion){
     this.nombre = nombre
     this.direccion = direccion
@@ -93,7 +93,6 @@ botonCarrito.addEventListener("click", () => {
   btnCalcular.addEventListener("click", () => {
     comidaStorage = JSON.parse(localStorage.getItem("carrito"))
     comidaStorage.forEach((comidaCarrito) => {
-    
     let cantidad = comidaCarrito.cantidad 
     let costo = comidaCarrito.precio
     let total = cantidad * costo
