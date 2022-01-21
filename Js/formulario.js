@@ -9,7 +9,7 @@ var imagen = new verImagen();
 src = imagen[Math.floor(Math.random() * imagen.N)];
 
 formCliente = addEventListener("submit", (e) => {
-  //formulario para obtener informacion del cliente
+  //formulario para obtener informacion del cliente y mostrarsela en su sesión
   e.preventDefault();
   let nombreCliente = document.getElementById("nombre").value;
   let direccionCliente = document.getElementById("direccion").value;
